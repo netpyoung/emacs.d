@@ -1,0 +1,10 @@
+- elpa/
+- README.el
+- conf.d/not-loaded/
+- .*
+- custom.el
+- external/
+- ido.*
+- network-security.data
+- projectile*
+- eshell/
