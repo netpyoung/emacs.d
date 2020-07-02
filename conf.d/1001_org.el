@@ -1,3 +1,12 @@
+;; - https://orgmode.org/manual/Easy-templates.html
+
+;; custom bind
+;; | org-edit-src-code | C-c C-' |
+;; | org-edit-src-code | C-c C-' |
+;; | org-store-link    | C-c l   |
+;; | org-agenda        | C-c a   |
+;; | org-capture       | C-c c   |
+
 (use-package org
   ;; :ensure org-plus-contrib
   ;; :pin org

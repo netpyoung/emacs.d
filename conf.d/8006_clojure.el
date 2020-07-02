@@ -1,3 +1,50 @@
+;; ** custom
+;;    | C-c C-x C-c C-r | cider-refresh                                               |
+;;    | C-M-i           | company-complete                                            |
+;;    | C-M-t           | projectile-toggle-between-implementation-and-test           |
+;;    | C-c C-o         | cider-find-and-clear-repl-output or cider-repl-clear-buffer |
+
+;; ** elisp
+;;    |-----------------+-------------------------------|
+;;    | eval            |                               |
+;;    |-----------------+-------------------------------|
+;;    | C-c M-;         | cider-eval-defun-to-comment   |
+;;    | C-c C-e         | cider-eval-last-sexp          |
+;;    | C-M-x           | cider-eval-defun-at-point     |
+;;    | C-c C-m         | cider-macroexpand-1           |
+;;    | C-c M-m         | cider-macroexpand-all         |
+;;    | C-c M-n (M-)n   | cider-repl-set-ns             |
+;;    |-----------------+-------------------------------|
+;;    | nav             |                               |
+;;    |-----------------+-------------------------------|
+;;    | M-.             | cider-find-var                |
+;;    | M-,             | cider-pop-back                |
+;;    | M-TAB           | complete-symbol               |
+;;    | C-c C-z         | cider-switch-to-repl-buffer   |
+;;    |-----------------+-------------------------------|
+;;    | connection      |                               |
+;;    |-----------------+-------------------------------|
+;;    | C-c C-x C-c C-j | cider-connect-clj             |
+;;    | C-c C-q         | cider-quit                    |
+;;    | C-c M-r         | cider-restart                 |
+;;    |-----------------+-------------------------------|
+;;    | test            |                               |
+;;    |-----------------+-------------------------------|
+;;    | C-c C-t C-t     | cider-test-run-test           |
+;;    | C-c C-t C-g     | cider-test-rerun-test         |
+;;    | C-c C-t C-n     | cider-test-run-ns-tests       |
+;;    | C-c C-t C-r     | cider-test-rerun-failed-tests |
+;;    |-----------------+-------------------------------|
+;;    | hang            |                               |
+;;    |-----------------+-------------------------------|
+;;    | C-c C-b         | cider-interrupt               |
+;;    |-----------------+-------------------------------|
+;;    | doc             |                               |
+;;    |-----------------+-------------------------------|
+;;    | C-c C-d C-d     | cider-doc                     |
+;;    | C-c C-d C-j     | cider-javadoc                 |
+;;    |-----------------+-------------------------------|
+
 (use-package cider
   ;; ref: https://github.com/clojure-emacs/cider
   ;; ref: https://cider.readthedocs.io/en/latest/interactive_programming/
@@ -182,3 +229,48 @@
 ;; Display the results in a hyperlinked *compilation* buffer."
 ;;   (interactive)
 ;;   (compile (concat "lein kibit " buffer-file-name)))
+
+
+;; ** tags
+;;   - http://martintrojer.github.io/clojure/2014/10/02/clojure-and-emacs-without-cider
+;;   - http://xahlee.info/comp/ctags_etags_gtags.html
+
+;; ** clojure-lsp
+;;    - https://github.com/snoe/clojure-lsp
+;;    - brew formula : https://github.com/Homebrew/homebrew-core/blob/master/Formula/clojure-lsp.rb
+;;    brew install Formula/clojure-lsp.rb
+;;    wget https://github.com/snoe/clojure-lsp/archive/release-20190614T052638.tar.gz
+;;    shasum -a 256 release-20190614T052638.tar.gz
+;;    c3934b1726b07522a6b4dd35ff9ce860fe3c3c979df2db8f216fb935b743860a  release-20190614T052638.tar.gz
+;;
+;;    git clone https://github.com/Homebrew/homebrew-core.git
+;;    cd homebrew-core
+;;    vi Formula/clojure-lsp.rb
+;;    brew install Formula/clojure-lsp.rb
+;;
+;;      #+BEGIN_SRC emacs-lisp
+;;        ;; brew install clojure-lsp
+;;
+;;        (use-package lsp-mode
+;;          :ensure t
+;;          :commands lsp
+;;          :config
+;;          (add-to-list 'lsp-language-id-configuration '(clojure-mode . "clojure-mode"))
+;;          :init
+;;          (setq lsp-enable-indentation nil)
+;;          (add-hook 'clojure-mode-hook #'lsp)
+;;          (add-hook 'clojurec-mode-hook #'lsp)
+;;          (add-hook 'clojurescript-mode-hook #'lsp))
+;;
+;;        (use-package lsp-ui
+;;          :ensure t
+;;          :commands lsp-ui-mode)
+;;
+;;        (use-package company-lsp
+;;          :ensure t
+;;          :commands company-lsp)
+;;      #+END_SRC
+;;      #+BEGIN_SRC text
+;;        cat .lsp/config.edn
+;;        {"dependency-scheme" "jar"}
+;;      #+END_SRC

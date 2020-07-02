@@ -1,3 +1,6 @@
+;; [https://company-mode.github.io/
+;; http://ohyecloudy.com/emacsian/2017/08/05/package-helm-ag-ripgrep-windows/
+
 (use-package company
   :ensure t
   :config
@@ -7,6 +10,10 @@
   (setq company-show-numbers true)
   (global-company-mode))
 
+
+
+;; https://github.com/emacs-helm/helm
+;; http://www.emacswiki.org/emacs/InteractivelyDoThings
 (use-package ido
   :ensure t)
 
@@ -72,3 +79,40 @@
 (use-package helm-rg
   ;; ref: https://github.com/microamp/helm-rg
   :ensure t)
+
+;; deprecated - ivy
+;; ;; -*- lexical-binding: t -*-
+;; (use-package ivy :ensure t
+;;   :diminish (ivy-mode . "")
+;;   :requires (projectile)
+;;   :bind ("C-x p" . projectile-find-file)
+;;   :config
+;;   (setq projectile-completion-system 'ivy)
+;;   (ivy-mode 1)
+;;   ;; add ‘recentf-mode’ and bookmarks to ‘ivy-switch-buffer’.
+;;   (setq ivy-use-virtual-buffers t)
+;;   (setq projectile-completion-system 'ivy)
+;;   ;; number of result lines to display
+;;   (setq ivy-height 40)
+;;   (setq ivy-count-format "(%d/%d) ")
+;;   ;; no regexp by default
+;;   (setq ivy-initial-inputs-alist nil)
+;;   ;; configure regexp engine.
+;;   (setq ivy-re-builders-alist
+;;         ;; allow input not in order
+;;         '((t   . ivy--regex-ignore-order))))
+;; (use-package counsel
+;;   :ensure t
+;;   :bind*
+;;   (("C-x C-x" . execute-extended-command)
+;;    ("M-x" . counsel-M-x)
+;;    ("C-x C-f" . counsel-find-file))
+;;   :custom
+;;   (counsel-find-file-ignore-regexp "\\.DS_Store\\|.git"))
+;; (use-package counsel-projectile
+;;   :ensure t
+;;   :config
+;;   (counsel-projectile-mode))
+;; (use-package amx
+;;   :ensure t
+;;   :config (amx-mode t))

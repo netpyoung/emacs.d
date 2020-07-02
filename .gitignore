@@ -1,7 +1,8 @@
-/__auto-save-list
+/auto-save-list
 /__package/
 /__eshell
 /__savehist
+/__font
 /server/
 
 /ac-comphist.dat
@@ -45,4 +46,3 @@ amx-items
 /transient
 /fonts/
 /.org-id-locations
-

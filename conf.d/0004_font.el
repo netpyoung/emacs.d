@@ -1,4 +1,43 @@
 ;; font
+
+;; https://dejavu-fonts.github.io/
+;; https://github.com/naver/d2codingfont
+;; https://www.google.com/get/noto/help/cjk/
+;; ref: https://www.emacswiki.org/emacs/SetFonts
+
+;; 0 o O l L i I 1 !
+;; , . "" '' ``
+;; ;:|\/
+;; [](){}<>
+;; +-*~
+;; S s C c V v P p
+
+;; 한글 테스트
+;; AABB CCDDEE
+
+;; abcdefghijklmnopqrstuvwxyz
+;; ABCDEFGHIJKLMNOPQRSTUVWXYZ
+;; Ξεσκεπάζω την ψυχοφθόρα βδελυγμία.
+;; αβγδεζηθικλμνξοπρστυφχψως
+;; ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ
+;; У рудога вераб’я ў сховішчы
+;; пад фатэлем ляжаць нейкія гаючыя зёлкі.
+;; абвгґдђѓеёєжнњопрс
+;; тћќуўuфхцчџшщъыьэюя
+;; АБВГҐДЂЃЕЁЄЖНЊОПРС
+;; ТЋЌУЎUФХЦЧЏШЩЪЫЬЭЮЯ
+;; & 1234567890 .,:;… ¡!¿?
+;; '" ‘’ “” ‚„ ′″‹› «» -–—
+;; (/)[|]{\} * †‡§¶|‖ @ №
+;; $£¥€₹₺₽¢ƒ %‰ ¼½¾⅓⅔⅛⅜⅝
+;; +−×÷∙=<>≤≥±^≠~≈¬ #π∞µ∂∫√
+;; •◦▪▫▴▸▾◂▵▹▿◃
+;; ●○■□▲▶▼◀△▷▽◁❒◆►◄◙◉◘
+;; ←↖↑↗→↘↓↙ ⇐⇑⇒⇓ ↔↕↨ ♀♂ ☼⌂ ☑ ✓
+;; ♪ ♫ ♥ ​♣​ ♦​ ♠​ ☺​ ☻ ​❤​ ☕​ 💩 ​🤖​ 🔒
+;;      
+
+
 (use-package all-the-icons
   ;; M-x all-the-icons-install-fonts
   :ensure t)
